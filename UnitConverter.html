@@ -1,0 +1,43 @@
+<script language="javascript" type="text/javascript">
+function Convert() {
+	var inputVal = document.getElementById("input").value
+	var inputUnit = document.getElementById("inputUnit").value
+	var outputUnit = document.getElementById("outputUnit").value
+	
+	document.getElementById("output").value = inputVal*GetConversionFactor(inputUnit, outputUnit)
+	
+	
+}
+function GetConversionFactor(inUnit, outUnit) {
+	switch (inUnit) {
+	case "test1":
+		return .5
+		break;
+	case "test2":
+		return 1
+		break;
+	case "test3":
+		return 1.5
+		break;
+	default:
+		return 0
+		break;
+	}
+}
+
+</script>
+
+<form>
+	Input:<input type="text" id="input" onblur="Convert()">
+	<Select onblur="Convert()" id="inputUnit">
+		<option value="test1">Test1</option>
+		<option value="test2">Test2</option>
+		<option value="test3">Test3</option>
+	</select>
+	Output:<input type="text" id="output" disabled>
+	<Select onblur="Convert()" id="outputUnit">
+		<option value="test1">Test1</option>
+		<option value="test2">Test2</option>
+		<option value="test3">Test3</option>
+	</select>
+</form>
